@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {
+  array,
   assert,
   defaulted,
   Describe,
@@ -52,10 +53,11 @@ it("object & is", () => {
   const userSchema = object({
     id: number(),
     name: string(),
+    tags: array(string()),
   });
 
   {
-    const input: any = { id: 123, name: "mike" };
+    const input: any = { id: 123, name: "mike", tags: ["hoge", "fuga"] };
     expect(is(input, userSchema)).toEqual(true);
     if (is(input, userSchema)) {
       // input.id, input.name...
