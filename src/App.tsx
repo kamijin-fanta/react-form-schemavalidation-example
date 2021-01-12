@@ -1,24 +1,19 @@
 import React from "react";
-import logo from "./logo.svg";
+import { SimpleForm } from "./simple-form/simple-form";
+import { SchemaValidationForm } from "./schema-validation-form/schema-validation-form";
 import "./App.css";
 
 function App(): React.ReactElement {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="content">
+        <h3>simple form</h3>
+        <SimpleForm />
+      </div>
+      <div className="content">
+        <h3>schema validation form</h3>
+        <SchemaValidationForm />
+      </div>
     </div>
   );
 }
