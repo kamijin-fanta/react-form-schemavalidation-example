@@ -22,21 +22,14 @@ export function SchemaValidationForm(): React.ReactElement {
       <div className="group">
         <label>
           name
-          <input
-            name="name"
-            ref={register({ required: true, minLength: 1, maxLength: 20 })}
-          />
+          <input name="name" ref={register()} />
           {errors.name?.message}
         </label>
       </div>
       <div className="group">
         <label>
           age
-          <input
-            name="age"
-            type="number"
-            ref={register({ required: true, valueAsNumber: true, min: 20 })}
-          />
+          <input name="age" type="number" ref={register()} />
           {errors.age?.message}
         </label>
       </div>
