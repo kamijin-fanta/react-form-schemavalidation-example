@@ -1,0 +1,39 @@
+env:
+  browser: true
+  es6: true
+extends:
+  # https://github.com/standard/eslint-config-standard
+  - standard
+
+  # https://github.com/yannickcr/eslint-plugin-react
+  - plugin:react/recommended
+
+  # https://github.com/typescript-eslint/typescript-eslint
+  - plugin:@typescript-eslint/recommended
+
+  # https://github.com/benmosher/eslint-plugin-import
+  - plugin:import/recommended
+  - plugin:import/react
+  - plugin:import/typescript
+
+  # https://github.com/prettier/eslint-config-prettier
+  - prettier/@typescript-eslint
+
+  # https://github.com/prettier/eslint-plugin-prettier
+  - plugin:prettier/recommended
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2018
+  sourceType: module
+plugins:
+  - react
+  - "@typescript-eslint"
+  - prettier
+rules:
+  prettier/prettier: warn
+  no-use-before-define: 0  # https://github.com/typescript-eslint/typescript-eslint/issues/2502
+settings:
+  react:
+    version: detect
